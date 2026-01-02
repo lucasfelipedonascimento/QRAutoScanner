@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="Patio" constructor="QRAutoScanner" version="1.0.0"
+         display-name-key="Continuous QR Scanner"
+         description-key="Continuous QR Scanner"
+         control-type="standard">
+
+  <property name="value"
+            display-name-key="QR Value"
+            description-key="QR Value"
+            of-type="SingleLine.Text"
+            usage="bound"
+            required="false" />
+
+  <resources>
+    <code path="index.ts" order="1" />
+  </resources>
+</control>
+
+</manifest>
