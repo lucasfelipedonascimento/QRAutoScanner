@@ -1,0 +1,1 @@
+/workspaces/QRAutoScanner/obj/Debug/QRAutoScanner.pcfproj.CoreCompileInputs.cache
