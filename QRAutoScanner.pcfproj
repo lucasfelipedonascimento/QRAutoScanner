@@ -9,7 +9,7 @@
 
   <PropertyGroup>
     <Name>QRAutoScanner</Name>
-    <ProjectGuid>f1b39f4e-9709-498c-8606-cfcec779a049</ProjectGuid>
+    <ProjectGuid>4323074d-3cb3-4524-a743-060f39cdf206</ProjectGuid>
     <OutputPath>$(MSBuildThisFileDirectory)out\controls</OutputPath>
   </PropertyGroup>
 
