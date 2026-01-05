@@ -23,6 +23,9 @@ export class QRAutoScanner implements ComponentFramework.StandardControl<IInputs
         scannerDiv.id = "qr-reader";
         scannerDiv.style.width = "100%";
         scannerDiv.style.height = "100%";
+        scannerDiv.style.backgroundColor = "#000";
+        scannerDiv.style.color = "#fff";
+        scannerDiv.innerText = "Ler QR Code"
 
         this.container.appendChild(scannerDiv);
 
@@ -36,15 +39,13 @@ export class QRAutoScanner implements ComponentFramework.StandardControl<IInputs
 
         this.scanner.start(
             { facingMode: "environment" },
-            { fps: 10, qrbox: 250 },
+            { fps: 15, qrbox: 800 },
             (decodedText) => {
                 // 🔒 Evita leitura duplicada imediata
                 if (decodedText === this.lastValue) return;
 
                 this.lastValue = decodedText;
                 this.value = decodedText;
-
-                console.log("QR lido:", decodedText);
 
                 this.notifyOutputChanged();
 
@@ -65,7 +66,7 @@ export class QRAutoScanner implements ComponentFramework.StandardControl<IInputs
 
     public getOutputs(): IOutputs {
         return {
-            value: this.value ?? undefined
+            Texto_Escaneado: this.value ?? undefined
         };
     }
 
