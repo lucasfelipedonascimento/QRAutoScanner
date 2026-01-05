@@ -21,8 +21,8 @@ export class QRAutoScanner implements ComponentFramework.StandardControl<IInputs
 
         const scannerDiv = document.createElement("div");
         scannerDiv.id = "qr-reader";
-        scannerDiv.style.width = "100%";
-        scannerDiv.style.height = "100%";
+        scannerDiv.style.minWidth = "570px";
+        scannerDiv.style.minHeight = "500px";
         scannerDiv.style.backgroundColor = "#000";
         scannerDiv.style.color = "#fff";
         scannerDiv.innerText = "Ler QR Code"
