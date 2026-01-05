@@ -55,7 +55,9 @@ export class QRAutoScanner implements ComponentFramework.StandardControl<IInputs
                     this.notifyOutputChanged();
                 }, 300);
             },
-            () => {}
+            () => {
+                // para não ficar vazio
+            }
         );
     }
 
