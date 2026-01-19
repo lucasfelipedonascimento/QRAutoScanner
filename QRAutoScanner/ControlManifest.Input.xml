@@ -19,12 +19,22 @@
     </external-service-usage>
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
 
-    <property name="Texto_Escaneado"
-            display-name-key="QR_Value"
-            description-key="QR_Value"
-            of-type="SingleLine.Text"
-            usage="bound"
-            required="false" />
+          <property 
+              name="Texto_Escaneado"
+              display-name-key="QR_Value"
+              description-key="QR_Value"
+              of-type="SingleLine.Text"
+              usage="bound"
+              required="false" 
+            />
+
+            <property 
+              name="resetScanner"
+              display-name-key="Reset Scanner"
+              description-key="Força reinício do scanner"
+              of-type="SingleLine.Text"
+              usage="input"
+            />
             
     <resources>
       <code path="index.ts" order="1"/>

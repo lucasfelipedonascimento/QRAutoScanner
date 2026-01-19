@@ -8,6 +8,8 @@ export class QRAutoScanner implements ComponentFramework.StandardControl<IInputs
     private scanner!: Html5Qrcode;
     private value: string | null = null;
     private lastValue: string | null = null;
+    private lastResetValue: string | null = null;
+
     private isRunning = false;
 
     public init(
@@ -61,9 +63,34 @@ export class QRAutoScanner implements ComponentFramework.StandardControl<IInputs
         );
     }
 
+    private async restartScanner() {
+    try {
+        if (this.isRunning) {
+            await this.scanner.stop();
+            this.isRunning = false;
+        }
+
+        this.lastValue = null;
+        this.value = null;
+
+        this.startScanner();
+        } catch (err) {
+            console.error("Erro ao reiniciar scanner", err);
+        }
+    }
+
+
     public updateView(context: ComponentFramework.Context<IInputs>): void {
         // Não precisa renderizar nada aqui,
         // mas o método NÃO pode ser omitido
+
+        const resetValue = context.parameters.resetScanner?.raw;
+
+        // 🔥 Detecta mudança
+        if (resetValue && resetValue !== this.lastResetValue) {
+            this.lastResetValue = resetValue;
+            this.restartScanner();
+        }
     }
 
     public getOutputs(): IOutputs {
